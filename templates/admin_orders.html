@@ -1,0 +1,26 @@
+{%extends "base.html"%}
+{%block content%}
+    <h1>Admin orders</h1>
+    <div>
+    
+    {%for orders in orders%}
+    <div>
+        <div>Title: {{orders.title}}</div>
+        <div>Category: {{orders.category}}</div>
+        <div>When: {{orders.when}}</div>
+        <br></br>
+    </div>
+    <div>
+    <script>
+
+    var price_calc = {
+        price = 0,
+
+    }
+    
+    </script>
+    </div>
+    {%endfor%}
+    
+    </div>
+{%endblock%}
