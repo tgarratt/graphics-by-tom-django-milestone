@@ -1,0 +1,11 @@
+{% if orders.when == '50' %}
+    When: ASAP
+{% elif orders.when == '40' %}
+    When: 1 Week
+{% elif orders.when == '30' %}
+    When: 2 Weeks
+{% elif orders.when == '20' %}
+    When: 4 Weeks+
+{% else %}
+    When: {{orders.when}}
+{% endif %}

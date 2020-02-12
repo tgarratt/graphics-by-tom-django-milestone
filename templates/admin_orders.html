@@ -3,24 +3,15 @@
     <h1>Admin orders</h1>
     <div>
     
-    {%for orders in orders%}
-    <div>
-        <div>Title: {{orders.title}}</div>
-        <div>Category: {{orders.category}}</div>
-        <div>When: {{orders.when}}</div>
-        <br></br>
-    </div>
-    <div>
-    <script>
+        {%for orders in orders%}
+        <div>
+            <div>Title: {{orders.title}}</div>
+            <div>{% include "partials/orders_category.html" %}</div>
+            <div>{% include "partials/orders_when.html" %}</div>
+            <br></br>
+        </div>
 
-    var price_calc = {
-        price = 0,
-
-    }
-    
-    </script>
-    </div>
-    {%endfor%}
+        {%endfor%}
     
     </div>
 {%endblock%}
