@@ -38,12 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
-    'purchasable',
     'unpurchasable',
     'order_work',
     'about_me',
     'templates',
     'admin_orders',
+    'unpurchasable_form',
+    'img',
 ]
 
 MIDDLEWARE = [

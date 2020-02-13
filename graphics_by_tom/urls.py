@@ -16,18 +16,18 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from home.views import get_home
-from purchasable.views import get_purchasable
 from about_me.views import get_about_me
 from order_work.views import get_order_work
 from unpurchasable.views import get_unpurchasable
 from admin_orders.views import get_admin_orders
+from unpurchasable_form.views import get_unpurchasable_form
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', get_home, name='home'),
-    url(r'^purchasable$', get_purchasable, name='purchasable'),
     url(r'^about_me$', get_about_me, name='about_me'),
     url(r'^order_work$', get_order_work, name='order_work'),
     url(r'^unpurchasable$', get_unpurchasable, name='unpurchasable'),
     url(r'^admin_orders$', get_admin_orders, name='admin_orders'),
+    url(r'^get_unpurchasable_form$', get_unpurchasable_form, name='unpurchasable_form'),
 ]

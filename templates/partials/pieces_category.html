@@ -1,0 +1,15 @@
+{% if pieces.piece_category == '25' %}
+    Category: Logo
+{% elif pieces.piece_category == '20' %}
+    Category: Clothing
+{% elif pieces.piece_category == '30' %}
+    Category: Web app
+{% elif pieces.piece_category == '35' %}
+    Category: Advertising
+{% elif pieces.piece_category == '40' %}
+    Category: Illistration
+{% elif pieces.piece_category == '15' %}
+    Category: Packaging
+{% else %}
+    Category: {{pieces.piece_category}}
+{% endif %}

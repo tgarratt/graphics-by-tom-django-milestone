@@ -1,4 +1,14 @@
 {%extends "base.html"%}
 {%block content%}
     <h1>Unpurchasable</h1>
+
+    {%for pieces in add_pieces%}
+    <div>
+    <img src="{{pieces.piece}}" alt="">
+    <div>Title: {{pieces.title}}</div>
+    <div>Title: {{pieces.company}}</div>
+    <div>{% include "partials/pieces_category.html" %}</div>
+    <br>
+    </div>
+    {%endfor%}
 {%endblock%}
