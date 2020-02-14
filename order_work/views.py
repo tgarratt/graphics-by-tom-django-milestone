@@ -4,9 +4,13 @@ from .forms import order_form
 
 def get_order_work(request):
     if request.method == "POST":
+        print(request.POST)
         form_order = order_form(request.POST, request.FILES)
         if form_order.is_valid():
-            form_order.save()
+            the_order = form_order.save()
+            total = int(request.POST.get('category')) + int(request.POST.get('when'))
+            the_order.order_total = total
+            the_order.save()
             print("Success")
 
     else:

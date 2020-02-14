@@ -4,7 +4,7 @@
     <div>
         {%for orders in orders%}
         <div>
-            <img src="{{orders.draft.url}}" alt="image">
+            <img src="{{orders.draft}}" alt="image">
             <div>Title: {{orders.title}}</div>
             <div>{% include "partials/orders_category.html" %}</div>
             <div>{% include "partials/orders_when.html" %}</div>
@@ -14,4 +14,5 @@
         {%endfor%}
     
     </div>
+    
 {%endblock%}
