@@ -14,7 +14,7 @@ class add_piece(models.Model):
         max_length=50, choices=PIECE_CATEGORY_CHOICES, default='')
     use = models.CharField(max_length=50, blank=False, default='')
     where = models.URLField(max_length=100, blank=False, default='')
-    piece = models.ImageField(upload_to="img/draft", blank=True, null=True)
+    piece = models.ImageField(upload_to="media/piece", blank=True, null=True)
 
     def __str__(self):
         return self.title

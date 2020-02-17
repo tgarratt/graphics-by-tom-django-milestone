@@ -6,7 +6,7 @@ class purchase(models.Model):
     full_name_or_company = models.CharField(max_length=50, blank=False)
     Email = models.CharField(max_length=50, blank=False)
     contact_number = models.CharField(max_length=20, blank=False)
-    current_date = models.DateField()
+    request_date = models.DateField()
 
     def __str__(self):
         return "{0}-{1}".format(self.id, self.full_name_or_company)

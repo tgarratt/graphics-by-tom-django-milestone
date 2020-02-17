@@ -17,7 +17,7 @@ class order(models.Model):
         ('50', 'ASAP',), ('40', '1 Week'), ('30', '2 Weeks'), ('20', '4 weeks+'))
     when = models.CharField(max_length=50, choices=WHEN_CHOICES, default='')
     inspiration = models.URLField(max_length=100, blank=False, default='')
-    draft = models.ImageField(upload_to="img/draft", blank=True, null=True)
+    draft = models.ImageField(upload_to="media/draft", blank=True, null=True)
     order_total = models.IntegerField(default=0)
 
     def __str__(self):

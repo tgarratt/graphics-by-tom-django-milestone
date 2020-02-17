@@ -26,7 +26,7 @@ SECRET_KEY = '83y_1=8h%vh%=odq#wjzdjbqntx)c#5mdlzaib%a&^elxp0$#b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8080-e125dd85-c9c7-4362-bd9f-f9c97673a4df.ws-eu01.gitpod.io']
+ALLOWED_HOSTS = ['8080-e125dd85-c9c7-4362-bd9f-f9c97673a4df.ws-eu01.gitpod.io', '34.77.236.223']
 
 
 # Application definition
@@ -45,8 +45,9 @@ INSTALLED_APPS = [
     'templates',
     'admin_orders',
     'unpurchasable_form',
-    'img',
+    'media',
     'payment',
+    'bootstrap_modal_forms',
 ]
 
 MIDDLEWARE = [
