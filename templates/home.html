@@ -2,12 +2,18 @@
 {%block content%}
     <h1>Graphics by Tom</h1>
 
+    {%if messages%}
+    <div>
+        {%for message in messages%}
+            {{message}}
+        {%endfor%}
+    </div>
+    {%endif%}
+
     <div>
          <a href="{%url 'unpurchasable'%}"><div>Unpurchasable</div></a>
          <a href="{%url 'order_work'%}"><div>Order work</div></a>
          <a href="{%url 'about_me'%}"><div>About me</div></a>
-         <a href="{%url 'admin_orders'%}"><div>Admin orders</div></a>
          <a href="{%url 'payment'%}"><div>Payment</div></a>
-         
     </div> 
 {%endblock%}

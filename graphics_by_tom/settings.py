@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import env
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'media',
     'payment',
     'bootstrap_modal_forms',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -84,12 +86,14 @@ WSGI_APPLICATION = 'graphics_by_tom.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#   'default': {
+#       'ENGINE': 'django.db.backends.sqlite3',
+#       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#   }
+# }
+
+DATABASES = {'default': dj_database_url.parse("postgres://npsokxqwqzwyxs:7a6a475a1d7f16b0a1b87ad7a976ceab7a883ba0ec3c4beab40ced1cc59c70a1@ec2-54-246-90-10.eu-west-1.compute.amazonaws.com:5432/de749f450um9el")}
 
 
 # Password validation
@@ -109,7 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -132,3 +135,13 @@ STATIC_URL = '/static/'
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smpt.gmail.com'
+EMAIL_HOST_USER = os.environ.get("EMAIL_ADRESS")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+EMAIL_PORT = 587
+ACCOUNT_EMAIL_VERIFICATION = 'none'
