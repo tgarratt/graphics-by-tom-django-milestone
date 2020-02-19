@@ -1,1 +1,1 @@
-web:gunicorn graphics_by_tom.wsgi:application
+web: gunicorn graphics_by_tom.wsgi:application
