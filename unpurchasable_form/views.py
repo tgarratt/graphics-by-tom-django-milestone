@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect, reverse
 from .forms import add_piece_form
 
 
@@ -7,7 +7,7 @@ def get_unpurchasable_form(request):
         form_add = add_piece_form(request.POST, request.FILES)
         if form_add.is_valid():
             form_add.save()
-            print("Success")
+            return redirect(reverse('unpurchasable'))
 
     else:
         form_add = add_piece_form()

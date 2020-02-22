@@ -1,3 +1,12 @@
+/* Global calls */
+
 form {
     width: 50%;
+}
+
+/* Nav bar */
+
+nav {
+    background-color: #000000; 
+    opacity: 0.75;
 }

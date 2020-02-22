@@ -10,10 +10,9 @@
         <div>Company: {{pieces.company}}</div>
         <div>{% include "partials/pieces_category.html" %}</div>
         <div>
-            <!-- <div><a href="{%url 'unpurchasable'%}?id={{pieces.id}}">View item</a></div> -->
             <div><a href="{% url 'unpurchasable_piece' pieces.id %}">View item</a></div>
             {% if request.user.is_superuser %}
-            <button>Delete</button>
+            <a href="{% url 'unpurchasable_piece_delete' pieces.id %}">Delete</a>
             {%endif%}
         </div>
     </div>

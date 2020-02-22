@@ -1,7 +1,7 @@
 {%extends "base.html"%}
 {%block content%}
 
-    <h1>Welcome! Graphics by Tom</h1>
+    <h1>Graphics by Tom</h1>
 
     {%if messages%}
     <div>
@@ -12,9 +12,11 @@
     {%endif%}
 
     <div>
-         <a href="{%url 'unpurchasable'%}"><div>Unpurchasable</div></a>
-         <a href="{%url 'order_work'%}"><div>Order work</div></a>
+         <a href="{%url 'unpurchasable'%}"><div>Previous work</div></a>
          <a href="{%url 'about_me'%}"><div>About me</div></a>
-         <a href="{%url 'payment'%}"><div>Payment</div></a>
+         {%if user.is_authenticated%}
+         <a href="{%url 'order_work'%}"><div>Order work</div></a>
+         {%endif%}
+        <!-- <a href="{%url 'payment'%}"><div>Payment</div></a> -->
     </div> 
 {%endblock%}
