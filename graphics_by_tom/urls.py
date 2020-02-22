@@ -18,7 +18,7 @@ from django.contrib import admin
 from home.views import get_home
 from about_me.views import get_about_me
 from order_work.views import get_order_work
-from unpurchasable.views import get_unpurchasable
+from unpurchasable.views import get_unpurchasable, get_unpurchasable_piece
 from admin_orders.views import get_admin_orders
 from unpurchasable_form.views import get_unpurchasable_form
 from payment.views import get_payment
@@ -35,4 +35,5 @@ urlpatterns = [
     url(r'^unpurchasable_form$', get_unpurchasable_form, name='unpurchasable_form'),
     url(r'^payment$', get_payment, name='payment'),
     url(r'^accounts/', include(accounts_urls)),
+    url(r'^unpurchasable_piece/(?P<pk>\d+)', get_unpurchasable_piece, name='unpurchasable_piece'),
 ]

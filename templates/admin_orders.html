@@ -3,13 +3,16 @@
     <h1>Admin orders</h1>
     <div>
         {%for orders in orders%}
+        <br>
         <div>
-            <img src="{{orders.draft}}" alt="image">
+            <div style="background_image: url('{{MEDIA_URL}}{{orders.piece}}')"></div>
             <div>Title: {{orders.title}}</div>
             <div>{% include "partials/orders_category.html" %}</div>
             <div>{% include "partials/orders_when.html" %}</div>
-            <br></br>
+            <div>ID: {{orders.id}}</div>
+            <button>Delete</button>
         </div>
+        <br>
 
         {%endfor%}
 

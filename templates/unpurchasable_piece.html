@@ -1,0 +1,12 @@
+{%extends "base.html"%}
+{%block content%}
+    <h1>{{piece.title}}</h1>
+
+    <div>company: {{piece.company}}</div>
+    <div>Brief: {{piece.brief}}</div>
+    <div>{% include "partials/piece_category.html" %}</div>
+    <div>Use: {{piece.use}}</div>
+    <div>Find it here: {{piece.where}}</div>
+    <div>Image: {{piece.piece}}</div>
+
+{%endblock%}

@@ -3,12 +3,20 @@
     <h1>Unpurchasable</h1>
 
     {%for pieces in add_pieces%}
-    <div>
-    <div style="background-image: {{pieces.piece}})"></div>
-    <div>Title: {{pieces.title}}</div>
-    <div>Title: {{pieces.company}}</div>
-    <div>{% include "partials/pieces_category.html" %}</div>
     <br>
+    <div>
+        <img src="{{pieces.draft}}" alt="image">
+        <div>Title: {{pieces.title}}</div>
+        <div>Company: {{pieces.company}}</div>
+        <div>{% include "partials/pieces_category.html" %}</div>
+        <div>
+            <!-- <div><a href="{%url 'unpurchasable'%}?id={{pieces.id}}">View item</a></div> -->
+            <div><a href="{% url 'unpurchasable_piece' pieces.id %}">View item</a></div>
+            {% if request.user.is_superuser %}
+            <button>Delete</button>
+            {%endif%}
+        </div>
     </div>
+    <br>
     {%endfor%}
 {%endblock%}

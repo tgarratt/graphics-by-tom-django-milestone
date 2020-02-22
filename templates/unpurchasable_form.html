@@ -1,10 +1,13 @@
 {%extends "base.html"%}
+
+{%load bootstrap_tags%}
+
 {%block content%}
     <h1>Unpurchasable form</h1>
         <form method="POST">
     {% csrf_token %}
     
-    {{form}}
+    {{form | as_bootstrap}}
 
 <button type="submit">order</button>
     </form>
