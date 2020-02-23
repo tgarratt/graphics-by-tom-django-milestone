@@ -1,8 +1,20 @@
 {%extends "base.html"%}
 {%block content%}
     <h1>Unpurchasable</h1>
+    <div>
+    <a href="{% url 'unpurchasable' %}">Clear</a>
+    <a href="{% url 'unpurchasable_logo' %}">Logo</a>
+    <a href="{% url 'unpurchasable_clothing' %}">Clothing</a>
+    <a href="{% url 'unpurchasable_web_app' %}">Web app</a>
+    <a href="{% url 'unpurchasable_advertising' %}">Advertising</a>
+    <a href="{% url 'unpurchasable_illustration' %}">Illustration</a>
+    </div>
+    {% if request.user.is_superuser %}
+    <a href="{%url 'unpurchasable_form'%}">Add piece</a>
+    {%endif%}   
 
     {%for pieces in add_pieces%}
+    <br>
     <br>
     <div>
         <img src="{{pieces.draft}}" alt="image">

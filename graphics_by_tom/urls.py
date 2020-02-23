@@ -19,10 +19,11 @@ from home.views import get_home
 from about_me.views import get_about_me
 from order_work.views import get_order_work
 from unpurchasable.views import get_unpurchasable, get_unpurchasable_piece, get_unpurchasable_piece_delete
-from admin_orders.views import get_admin_orders
+from admin_orders.views import get_admin_orders, get_admin_orders_delete
 from unpurchasable_form.views import get_unpurchasable_form
 from payment.views import get_payment
 from accounts import urls as accounts_urls
+from unpurchasable import urls as unpurchasable_urls
 
 
 urlpatterns = [
@@ -30,11 +31,11 @@ urlpatterns = [
     url(r'^$', get_home, name='home'),
     url(r'^about_me$', get_about_me, name='about_me'),
     url(r'^order_work$', get_order_work, name='order_work'),
-    url(r'^unpurchasable$', get_unpurchasable, name='unpurchasable'),
+    url(r'^unpurchasable/', include(unpurchasable_urls)),
+    url(r'^admin_orders_delete/(?P<pk>\d+)', get_admin_orders_delete, name='admin_orders_delete'),
     url(r'^admin_orders$', get_admin_orders, name='admin_orders'),
     url(r'^unpurchasable_form$', get_unpurchasable_form, name='unpurchasable_form'),
     url(r'^payment$', get_payment, name='payment'),
     url(r'^accounts/', include(accounts_urls)),
-    url(r'^unpurchasable_piece/(?P<pk>\d+)', get_unpurchasable_piece, name='unpurchasable_piece'),
-    url(r'^unpurchasable_piece_delete/(?P<pk>\d+)', get_unpurchasable_piece_delete, name='unpurchasable_piece_delete'),
+
 ]

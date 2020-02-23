@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^login/$', get_sign_in, name='sign_in'),
     url(r'^register/$', get_register, name='register'),
     url(r'^profile/$', get_profile, name='profile'),
-    url(r'^password_reset/', include(url_reset))
+    url(r'^password_reset/', include(url_reset)),
 ]
