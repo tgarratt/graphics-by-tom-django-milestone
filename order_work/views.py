@@ -12,7 +12,7 @@ def get_order_work(request):
                 request.POST.get('category')) + int(request.POST.get('when'))
             the_order.order_total = total
             the_order.save()
-            print("Submitted")
+            print(total)
 
     else:
         form_order = order_form()

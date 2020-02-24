@@ -1,10 +1,9 @@
 from django import forms
-from .models import purchase
 
 
 class payment_form(forms.Form):
 
-    MONTH_CHOICES = [(i, i) for i in range(1, 12)]
+    MONTH_CHOICES = [(i, i) for i in range(1, 13)]
     YEAR_CHOICES = [(i, i) for i in range(2016, 2036)]
 
     credit_card_number = forms.CharField(
@@ -15,10 +14,3 @@ class payment_form(forms.Form):
     expiry_year = forms.ChoiceField(
         label='Year', choices=YEAR_CHOICES, required=False)
     stripe_id = forms.CharField(widget=forms.HiddenInput)
-
-
-class purchase_form(forms.ModelForm):
-    class Meta:
-        model = purchase
-        fields = (
-            'full_name_or_company', 'Email', 'contact_number')

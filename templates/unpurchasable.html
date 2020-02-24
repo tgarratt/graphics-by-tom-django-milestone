@@ -1,4 +1,5 @@
 {%extends "base.html"%}
+{% load static %}
 {%block content%}
     <h1>Unpurchasable</h1>
     <div>
@@ -17,7 +18,9 @@
     <br>
     <br>
     <div>
-        <img src="{{pieces.draft}}" alt="image">
+        <div>
+            <img src="{%static 'pieces.piece'%}" alt="image">
+        </div>
         <div>Title: {{pieces.title}}</div>
         <div>Company: {{pieces.company}}</div>
         <div>{% include "partials/pieces_category.html" %}</div>
