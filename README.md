@@ -23,4 +23,3 @@ In Gitpod you have superuser security privileges by default. Therefore you do no
 Happy coding!
 
 
-[![Build Status](https://travis-ci.org/tgarratt/graphics-by-tom-django-milestone.svg?branch=master)](https://travis-ci.org/tgarratt/graphics-by-tom-django-milestone)
