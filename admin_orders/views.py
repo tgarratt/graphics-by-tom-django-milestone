@@ -3,7 +3,7 @@ from order_work.models import order
 
 
 def get_admin_orders(request):
-    orders = order.objects.all()
+    orders = order.objects.filter(paid=True)
     return render(request, "../templates/admin_orders.html", {"orders": orders})
 
 

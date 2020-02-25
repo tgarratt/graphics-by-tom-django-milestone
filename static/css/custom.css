@@ -1,12 +1,27 @@
 /* Global calls */
-
 form {
     width: 50%;
 }
 
 /* Nav bar */
 
-nav {
-    background-color: #000000; 
-    opacity: 0.75;
+.nav-style {
+    background-color: red;
+}
+
+/* Form for loops */
+
+.img_div {
+    height: 250px;
+    width: 250px;
+}
+
+/*Homepage*/
+
+.home-options{
+    text-align: center;
+}
+
+.home-links {
+    display: inline-block;
 }

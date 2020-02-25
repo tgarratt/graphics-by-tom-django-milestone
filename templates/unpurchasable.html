@@ -14,12 +14,12 @@
     <a href="{%url 'unpurchasable_form'%}">Add piece</a>
     {%endif%}   
 
-    {%for pieces in add_pieces%}
+    {%for pieces in add_pieces %}
     <br>
     <br>
     <div>
         <div>
-            <img src="{%static 'pieces.piece'%}" alt="image">
+            <div class="img_div" style="background-image: url('{{MEDIA_URL}}{{pieces.piece}}')"></div>
         </div>
         <div>Title: {{pieces.title}}</div>
         <div>Company: {{pieces.company}}</div>

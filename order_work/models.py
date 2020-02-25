@@ -1,9 +1,12 @@
 from django.db import models
+from django.utils import timezone
 
 
 class order(models.Model):
 
     title = models.CharField(max_length=50, blank=False)
+    user_name = models.CharField(max_length=50, blank=False, default='')
+    user_email = models.CharField(max_length=60, blank=False, default='')
     company = models.CharField(max_length=50, blank=False, default='')
     brief = models.CharField(max_length=200, blank=False, default='')
     CATEGORY_CHOICES = (
@@ -17,8 +20,10 @@ class order(models.Model):
         ('50', 'ASAP',), ('40', '1 Week'), ('30', '2 Weeks'), ('20', '4 weeks+'))
     when = models.CharField(max_length=50, choices=WHEN_CHOICES, default='')
     inspiration = models.URLField(max_length=100, blank=False, default='')
-    draft = models.ImageField(upload_to="media/draft_img", blank=True, null=True)
+    draft = models.ImageField(upload_to="draft_img", blank=True, null=True)
     order_total = models.IntegerField(default=0)
+    order_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
+    paid = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title

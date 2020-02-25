@@ -7,6 +7,8 @@
     <div>{% include "partials/piece_category.html" %}</div>
     <div>Use: {{piece.use}}</div>
     <div>Find it here: {{piece.where}}</div>
-    <div>Image: {{piece.piece}}</div>
+    <div>
+       <div class="img_div" style="background-image: url('{{MEDIA_URL}}{{pieces.piece}}')">imagediv</div>
+    </div>
 
 {%endblock%}

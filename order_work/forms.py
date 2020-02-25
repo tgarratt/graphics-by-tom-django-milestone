@@ -8,5 +8,3 @@ class order_form(forms.ModelForm):
         fields = (
             'title', 'company', 'category', 'brief',
             'use', 'when', 'inspiration', 'draft')
-
-
