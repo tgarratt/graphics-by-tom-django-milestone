@@ -1,15 +1,15 @@
 {% if pieces.piece_category == '25' %}
-    Category: Logo
+    <b>Category:</b> Logo
 {% elif pieces.piece_category == '20' %}
-    Category: Clothing
+    <b>Category:</b> Clothing
 {% elif pieces.piece_category == '30' %}
-    Category: Web app
+    <b>Category:</b> Web app
 {% elif pieces.piece_category == '35' %}
-    Category: Advertising
+    <b>Category:</b> Advertising
 {% elif pieces.piece_category == '40' %}
-    Category: Illistration
+    <b>Category:</b> Illistration
 {% elif pieces.piece_category == '15' %}
-    Category: Packaging
+    <b>Category:</b> Packaging
 {% else %}
-    Category: {{pieces.piece_category}}
+    <b>Category:</b> {{pieces.piece_category}}
 {% endif %}

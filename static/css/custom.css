@@ -10,6 +10,10 @@ body {
     width: 100%;
 }
 
+.content {
+    padding-left: 10px;
+}
+
 .page-messages {
     color: #ffff;
 }
@@ -39,8 +43,10 @@ body {
 /* Form for loops */
 
 .img-div {
-    height: 10%;
-    width: 10%;
+    height: 300px;
+    width: 300px;
+    background-repeat: no-repeat;
+    display: inline-block;
 }
 
 /*Homepage*/
@@ -64,6 +70,21 @@ body {
 }
 
 /*Unpurchasables*/
+.piece {
+    text-align: center;
+    margin: 40px;
+}
+
+.piece-content {
+    text-align: center;
+    margin: 40px;
+}
+
+.sub-header {
+    color: #000;
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
 
 .filter-text {
     color: #000;
