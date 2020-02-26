@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import payment_form
@@ -7,7 +7,7 @@ from django.conf import settings
 import stripe
 
 
-stripe_api_key = settings.STRIPE_SECRET
+stripe.api_key = settings.STRIPE_SECRET
 
 
 @login_required()
@@ -18,9 +18,7 @@ def get_payment(request):
         form_payment = payment_form(request.POST)
 
         if form_payment.is_valid():
-            purchase = form_payment.save(commit=False)
-            purchase.save()
-
+            
             price = 10
             try:
                 customer = stripe.Charge.create(
@@ -33,8 +31,9 @@ def get_payment(request):
                 messages.error(request, "Your card was declined!")
 
             if customer.paid:
-                messages.error(request, "You have successfully paid!")
+                messages.success(request, "You have successfully paid!")
                 print("success")
+                return redirect(reverse("home"))
 
             else:
                 messages.error(request, "Unable to take payment!")

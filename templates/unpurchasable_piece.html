@@ -1,14 +1,19 @@
 {%extends "base.html"%}
 {%block content%}
-    <h1>{{piece.title}}</h1>
+    <h1 class="page-header">{{piece.title}}</h1>
 
-    <div>company: {{piece.company}}</div>
-    <div>Brief: {{piece.brief}}</div>
-    <div>{% include "partials/piece_category.html" %}</div>
-    <div>Use: {{piece.use}}</div>
-    <div>Find it here: {{piece.where}}</div>
-    <div>
-        <div class="img_div" style="background-image: url('{{MEDIA_URL}}{{pieces.piece}}')">img</div>
+    <div class="one-piece row">
+        <div class="col-sm-12 col-md-6 row">
+            <div class="one-piece-text col-sm-12 col-md-12">company: {{piece.company}}</div>
+            <div class="one-piece-text col-sm-12 col-md-12">Brief: {{piece.brief}}</div>
+            <div class="one-piece-text col-sm-12 col-md-12">{% include "partials/piece_category.html" %}</div>
+            <div class="one-piece-text col-sm-12 col-md-12">Use: {{piece.use}}</div>
+            <div class="one-piece-text col-sm-12 col-md-12">Find it here: {{piece.where}}</div>
+        </div> 
+        <div class="col-sm-12 col-md-6">   
+            <div>
+                <div class="img-div" style="background-image: url('{{MEDIA_URL}}{{pieces.piece}}')">img</div>
+            </div>
+        </div>
     </div>
-
 {%endblock%}

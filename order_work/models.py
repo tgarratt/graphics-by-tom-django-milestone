@@ -21,6 +21,7 @@ class order(models.Model):
     when = models.CharField(max_length=50, choices=WHEN_CHOICES, default='')
     inspiration = models.URLField(max_length=100, blank=False, default='')
     draft = models.ImageField(upload_to="draft_img", blank=True, null=True)
+    comments = models.CharField(max_length=200, blank=False, default='')
     order_total = models.IntegerField(default=0)
     order_date = models.DateTimeField(blank=True, null=True, default=timezone.now)
     paid = models.BooleanField(default=True)

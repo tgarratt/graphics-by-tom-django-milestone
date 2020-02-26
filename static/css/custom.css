@@ -1,18 +1,17 @@
 /*General*/
 
-
 html {
     height: 100%;
 }
 
 form {
     width: 50%;
+    margin-bottom: 50px;
 }
 
 body {
-    background-image: linear-gradient(#ffff, #AFAEAE);
     height: 100%;
-    width: 99%;
+    width: 100%;
 }
 
 .content {
@@ -83,14 +82,14 @@ body {
 /*Unpurchasables*/
 .piece {
     text-align: center;
-    margin: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
     padding: 5px;
 }
 
 .piece-content {
     margin: 40px;
     font-size: 17px;
-    border: 10px;
 }
 
 .sub-header {
@@ -107,6 +106,21 @@ body {
     border-radius: 10px;
 }
 
+/*Unpurchasable view*/
+.one-piece {
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.one-piece-text {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+
+}
+
 /*Hover*/
 
 .home-options:hover {
@@ -116,15 +130,24 @@ body {
 
 
 .home-options:hover .home-text{
-    background-color: #6D6D6D;
+    background-color: #DCDCDC;
     transition: 0.2s;
     color: #ffff;
 }
 
 .filter-text:hover {
     color: #ffff;
-    background-color: #AFAEAE;
+    background-color: #DCDCDC;
     transition: 0.2s;
+}
+
+.piece-content:hover {
+    background-color: #DCDCDC;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+    color: #ffff;
 }
 
 /*footer*/

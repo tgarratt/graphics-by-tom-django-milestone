@@ -7,4 +7,4 @@ class order_form(forms.ModelForm):
         model = order
         fields = (
             'title', 'company', 'category', 'brief',
-            'use', 'when', 'inspiration', 'draft')
+            'use', 'when', 'inspiration', 'draft', 'comments')
