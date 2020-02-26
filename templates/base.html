@@ -23,27 +23,63 @@
 </head>
 
 <body class="body-color">
-	<nav class="navbar navbar-default nav-style">
-		<div>
-			<ul class="nav navbar-nav">
-				<li><a href="{%url 'home'%}">HOME</a></li>
-				{%if user.is_authenticated%}
-				<li><a href="{%url 'sign_out'%}">Sign out</a></li>
-				<li><a href="{%url 'profile'%}">Profile</a></li>
-				{% if request.user.is_superuser %}
-				<li><a href="{%url 'admin_orders'%}">Admin orders</a></li>
-				{%endif%}
-				{%else%}
-				<li><a href="{%url 'sign_in'%}">Sign in/register</a></li>
-				<li></li>
-				{%endif%}
-			</ul>
-		</div>
-	</nav>
+    <div class="mobile-hide">
+        <nav class="navbar navbar-default">
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a href="{%url 'home'%}" class="glyphicon glyphicon-home"></a></li>
+                    {% if request.user.is_superuser %}
+                        <li><a href="{%url 'admin_orders'%}">Admin orders</a></li>
+                    {%endif%}
+                    {%if user.is_authenticated%}
+                        <li><a href="{%url 'profile'%}">Profile</a></li>
+                        <li><a href="{%url 'sign_out'%}">Sign out</a></li>
+                    {%else%}
+                        <li><a href="{%url 'sign_in'%}">Sign in/register</a></li>
+                    {%endif%}
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="mobile-only">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+                <ul class="nav navbar-nav">
+                    <li><a href="{%url 'home'%}" class="glyphicon glyphicon-home"></a></li>
+                    {% if request.user.is_superuser %}
+                        <li><a href="{%url 'admin_orders'%}">Admin orders</a></li>
+                    {%endif%}
+                    {%if user.is_authenticated%}
+                        <li><a href="{%url 'profile'%}">Profile</a></li>
+                    {%endif%}
+                </ul>
+            </div>
+        </div>
+        <nav class="navbar navbar-default">
+            <button class="navbar-toggler inline glyphicon glyphicon-menu-hamburger" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {%if user.is_authenticated%}
+                <div  class="inline"><a href="{%url 'sign_out'%}">Sign out</a></div>
+            {%else%}
+                <div  class="inline"><a href="{%url 'sign_in'%}">Sign in/register</a></div>
+            {%endif%}
+        </nav>
+    </div>
 
 	{%block content%}
 	{%endblock%}
 
+
+    <footer>
+        <div>
+            <ul>
+                <li><a href="https://github.com/tgarratt" target="_blank">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/tom-garratt-303284168/" target="_blank">LinkedIn</a></li>
+                <li><a href="N/A" target="_blank">Twitter</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -2,26 +2,96 @@
 form {
     width: 50%;
 }
+/*General*/
+body {
+    background-image: linear-gradient(#ffff, #AFAEAE);
+    height: 100%;
+    width: 100%;
+}
+
+.page-messages {
+    color: #ffff;
+}
+
+.page-header {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.inline {
+    display: inline;
+}
 
 /* Nav bar */
 
-.nav-style {
-    background-color: red;
-}
 
 /* Form for loops */
 
-.img_div {
-    height: 250px;
-    width: 250px;
+.img-div {
+    height: 10%;
+    width: 10%;
 }
 
 /*Homepage*/
 
 .home-options{
     text-align: center;
+    padding-top: 80px;
+    padding-bottom: 80px; 
+    font-size: 20px;
+    width: 100%;
 }
 
-.home-links {
+
+.home-text {
+    background-color: #ffff;
+    color: #000;
+    height: 15%;
+    width: 11%;
     display: inline-block;
+    border-radius: 25px;
+}
+
+/*Hover*/
+
+.home-options:hover {
+    transition: 1s;
+    background-color: #ffff;
+}
+
+
+.home-options:hover .home-text{
+    background-color: #6D6D6D;
+    transition: 0.2s;
+    color: #ffff;
+}
+
+/*footer*/
+
+footer {
+    height: 20px;
+    width: 100%;
+    background-color: #AFAEAE;
+}
+
+ul li {
+    display: inline;
+
+}
+
+/*---------------------------------- MOBILE Hide */
+
+@media(max-width: 768px) {
+    .mobile-hide {
+        display: none !important;
+    }
+}
+
+
+/*---------------------------------- MOBILE ONLY */
+
+@media(min-width: 768px) {
+    .mobile-only {
+        display: none !important;
+    }
 }

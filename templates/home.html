@@ -1,8 +1,9 @@
 {%extends "base.html"%}
 {%block content%}
-
-    <h1>Graphics by Tom</h1>
-
+<div class="page-background">
+    <div class="page-header">
+        <h1>Graphics by Tom</h1>
+    </div>
     {%if messages%}
     <div>
         {%for message in messages%}
@@ -10,18 +11,26 @@
         {%endfor%}
     </div>
     {%endif%}
+    <a href="{%url 'unpurchasable'%}">
+        <div  class="home-options">
+            <div  class="home-text">Previous work</div>
+        </div>
+    </a>
 
-    <div  class="home-options">
-        <a href="{%url 'unpurchasable'%}"><div class="home-links">Previous work</div></a>
-    </div>
+    <a href="{%url 'about_me'%}">
+        <div  class="home-options">
+            <div  class="home-text">About me</div>
+        </div>
+    </a>
 
-    <div  class="home-options">
-        <a href="{%url 'about_me'%}"><div class="home-links">About me</div></a>
-    </div>
-
-    <div  class="home-options">
-            {%if user.is_authenticated%}
-            <a href="{%url 'order_work'%}"><div class="home-links">Order work</div></a>
-            {%endif%}
-    </div> 
+    {%if user.is_authenticated%}
+        <a href="{%url 'order_work'%}">
+            <div  class="home-options">
+                    
+                <div class="home-text">Order work</div>
+                    
+            </div> 
+        </a>
+    {%endif%}
+</div>
 {%endblock%}
