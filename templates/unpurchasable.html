@@ -1,18 +1,24 @@
 {%extends "base.html"%}
 {% load static %}
 {%block content%}
-    <h1>Previous work</h1>
     <div>
-    <a href="{% url 'unpurchasable' %}">Clear</a>
-    <a href="{% url 'unpurchasable_logo' %}">Logo</a>
-    <a href="{% url 'unpurchasable_clothing' %}">Clothing</a>
-    <a href="{% url 'unpurchasable_web_app' %}">Web app</a>
-    <a href="{% url 'unpurchasable_advertising' %}">Advertising</a>
-    <a href="{% url 'unpurchasable_illustration' %}">Illustration</a>
+        <h1 class="inline">Previous work</h1>
+        <div class="inline">
+        {% if request.user.is_superuser %}
+        <a href="{%url 'unpurchasable_form'%}">Add piece</a>
+        {%endif%}
+        </div>
     </div>
-    {% if request.user.is_superuser %}
-    <a href="{%url 'unpurchasable_form'%}">Add piece</a>
-    {%endif%}   
+    <div>
+    <p>Filter via category:</p>
+    <a href="{% url 'unpurchasable' %}" class="filter-text">Clear</a>
+    <a href="{% url 'unpurchasable_logo' %}" class="filter-text">Logo</a>
+    <a href="{% url 'unpurchasable_clothing' %}" class="filter-text">Clothing</a>
+    <a href="{% url 'unpurchasable_web_app' %}" class="filter-text">Web app</a>
+    <a href="{% url 'unpurchasable_advertising' %}" class="filter-text">Advertising</a>
+    <a href="{% url 'unpurchasable_illustration' %}" class="filter-text">Illustration</a>
+    </div>
+   
 
     {%for pieces in add_pieces %}
     <br>

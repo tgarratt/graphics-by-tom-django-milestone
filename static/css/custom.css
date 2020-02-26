@@ -1,8 +1,9 @@
-/* Global calls */
+/*General*/
+
 form {
     width: 50%;
 }
-/*General*/
+
 body {
     background-image: linear-gradient(#ffff, #AFAEAE);
     height: 100%;
@@ -57,9 +58,19 @@ body {
     background-color: #ffff;
     color: #000;
     height: 15%;
-    width: 11%;
+    width: 200px;
     display: inline-block;
     border-radius: 25px;
+}
+
+/*Unpurchasables*/
+
+.filter-text {
+    color: #000;
+    background-color: #ffff;
+    padding: 5px;
+    margin: 20px;
+    border-radius: 10px;
 }
 
 /*Hover*/
@@ -74,6 +85,12 @@ body {
     background-color: #6D6D6D;
     transition: 0.2s;
     color: #ffff;
+}
+
+.filter-text:hover {
+    color: #ffff;
+    background-color: #AFAEAE;
+    transition: 0.2s;
 }
 
 /*footer*/
