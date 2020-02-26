@@ -9,31 +9,49 @@
         {%endif%}
         </div>
     </div>
-    <div>
-    <p><u>Filter via category:</u></p>
-    <a href="{% url 'unpurchasable' %}" class="filter-text">Clear</a>
-    <a href="{% url 'unpurchasable_logo' %}" class="filter-text">Logo</a>
-    <a href="{% url 'unpurchasable_clothing' %}" class="filter-text">Clothing</a>
-    <a href="{% url 'unpurchasable_web_app' %}" class="filter-text">Web app</a>
-    <a href="{% url 'unpurchasable_advertising' %}" class="filter-text">Advertising</a>
-    <a href="{% url 'unpurchasable_illustration' %}" class="filter-text">Illustration</a>
+    <div class="mobile-hide">
+        <p><u>Filter via category:</u></p>
+        <div>
+            <a href="{% url 'unpurchasable' %}" class="filter-text">Clear</a>
+            <a href="{% url 'unpurchasable_logo' %}" class="filter-text">Logo</a>
+            <a href="{% url 'unpurchasable_clothing' %}" class="filter-text">Clothing</a>
+            <a href="{% url 'unpurchasable_web_app' %}" class="filter-text">Web app</a>
+            <a href="{% url 'unpurchasable_advertising' %}" class="filter-text">Advertising</a>
+            <a href="{% url 'unpurchasable_illustration' %}" class="filter-text">Illustration</a>
+        </div>
+    </div>
+
+    <div class="mobile-only">
+        <p><u>Filter via category:</u></p>
+        <div>
+            <a href="{% url 'unpurchasable' %}" class="filter-text">Clear</a>
+            <a href="{% url 'unpurchasable_logo' %}" class="filter-text">Logo</a>
+            <a href="{% url 'unpurchasable_clothing' %}" class="filter-text">Clothing</a>
+        </div>
+        <div>
+            <a href="{% url 'unpurchasable_web_app' %}" class="filter-text">Web app</a>
+            <a href="{% url 'unpurchasable_advertising' %}" class="filter-text">Advertising</a>
+            <a href="{% url 'unpurchasable_illustration' %}" class="filter-text">Illustration</a>
+        </div>
     </div>
    
     <div class="row piece">
     {%for pieces in add_pieces %}
 
     
-        <div class="col-md-4 row">
+        <div class="col-md-4 row piece-content">
             <div class="col-md-12">
                 <div class="img-div" style="background-image: url('{{MEDIA_URL}}{{pieces.piece}}')"></div>
             </div>
-            <div class="col-md-6"><b>Title:</b> {{pieces.title}}</div>
-            <div  class="col-md-6">{% include "partials/pieces_category.html" %}</div>
-            <div  class="col-md-12 row">
-                <div  class="col-md-6"><a href="{% url 'unpurchasable_piece' pieces.id %}">View item</a></div>
-                {% if request.user.is_superuser %}
-                <div  class="col-md-6"><a href="{% url 'unpurchasable_piece_delete' pieces.id %}">Delete</a></div>
-                {%endif%}
+            <div>    
+                <div class="col-md-6"><b>Title:</b> {{pieces.title}}</div>
+                <div  class="col-md-6">{% include "partials/pieces_category.html" %}</div>
+                <div  class="col-md-12 row">
+                    <div  class="col-md-6"><a href="{% url 'unpurchasable_piece' pieces.id %}">View item</a></div>
+                    {% if request.user.is_superuser %}
+                    <div  class="col-md-6"><a href="{% url 'unpurchasable_piece_delete' pieces.id %}">Delete</a></div>
+                    {%endif%}
+                </div>
             </div>
         </div>
     
