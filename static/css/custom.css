@@ -24,6 +24,16 @@ body {
 
 /* Nav bar */
 
+.mob-nav-link {
+    color: #000;
+    padding-left: 15px;
+    margin-left: 10px;
+}
+
+.mob-burger {
+    padding: 8px;
+    margin: 10px;
+}
 
 /* Form for loops */
 
