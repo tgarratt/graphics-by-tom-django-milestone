@@ -19,7 +19,8 @@ def get_payment(request):
 
         if form_payment.is_valid():
             
-            price = 10
+            price = 0
+            name = request.user.username
             try:
                 customer = stripe.Charge.create(
                     amount=int(price * 100),

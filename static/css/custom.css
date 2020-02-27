@@ -7,6 +7,13 @@ html {
 form {
     width: 50%;
     margin-bottom: 50px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.form-control {
+    background-color: #DCDCDC!important;
+    color: #000!important;
 }
 
 body {
@@ -27,12 +34,12 @@ body {
     padding-left: 20px;
 }
 
-.inline {
+/*.inline {
     display: inline;
-}
+} */
 
-.right {
-    
+.center-child {
+    text-align: center;
 }
 
 /* Nav bar */
@@ -106,6 +113,10 @@ body {
     border-radius: 10px;
 }
 
+.filter-desc {
+    font-size: 17px;
+}
+
 /*Unpurchasable view*/
 .one-piece {
     text-align: left;
@@ -115,9 +126,14 @@ body {
 }
 
 .one-piece-text {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 15px;
     font-size: 20px;
+    background-color: #DCDCDC;
+    border-radius: 10px;
 
 }
 
@@ -125,12 +141,12 @@ body {
 
 .home-options:hover {
     transition: 1s;
-    background-color: #ffff;
+    background-color: #DCDCDC;
 }
 
 
 .home-options:hover .home-text{
-    background-color: #DCDCDC;
+    background-color: #C8C8C8;
     transition: 0.2s;
     color: #ffff;
 }

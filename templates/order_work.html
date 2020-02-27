@@ -4,13 +4,14 @@
 
 {%block content%}
     <h1>Order work</h1>
+    <div>
+        <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        {{form | as_bootstrap}}
 
-    <form method="POST">
-    {% csrf_token %}
-    
-    {{form | as_bootstrap}}
-
-        <button type="submit" class="btn btn-primary">order</button>
-    </form>
+            <button type="submit" class="btn btn-primary">order</button>
+        </form>
+    </div>
 
  {%endblock%}

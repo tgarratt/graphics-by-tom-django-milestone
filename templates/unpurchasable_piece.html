@@ -8,11 +8,12 @@
             <div class="one-piece-text col-sm-12 col-md-12">Brief: {{piece.brief}}</div>
             <div class="one-piece-text col-sm-12 col-md-12">{% include "partials/piece_category.html" %}</div>
             <div class="one-piece-text col-sm-12 col-md-12">Use: {{piece.use}}</div>
+            <div class="one-piece-text col-sm-12 col-md-12">Price: {{piece.order_total}}</div>
             <div class="one-piece-text col-sm-12 col-md-12">Find it here: {{piece.where}}</div>
         </div> 
         <div class="col-sm-12 col-md-6">   
             <div>
-                <div class="img-div" style="background-image: url('{{MEDIA_URL}}{{pieces.piece}}')">img</div>
+                <div class="img-div" style="background-image: url('{{MEDIA_URL}}{{piece.piece}}')">img</div>
             </div>
         </div>
     </div>
