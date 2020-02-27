@@ -15,22 +15,12 @@
 
 {%block content%}
 <h1>Payment</h1>
-{%for orders in orders%}
 
 <div>
-    <p>{{orders.title}}<p>
-	<p class="glyphicon glyphicon-gbp">{{orders.order_total}}<p>
+	<p class="glyphicon glyphicon-gbp">{{payment_amount}}<p>
 </div>
 
-{%endfor%}
 
-{%if messages%}
-<div>
-    {%for message in messages%}
-        {{message}}
-    {%endfor%}
-</div>
-{%endif%}
 
 <form role="form" method="post" id="payment-form" action="{%url 'payment'%}">
 	{% csrf_token %}

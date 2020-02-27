@@ -11,26 +11,50 @@
         {%endfor%}
     </div>
     {%endif%}
-    <a href="{%url 'unpurchasable'%}">
-        <div  class="home-options">
-            <div  class="home-text">Previous work</div>
-        </div>
-    </a>
+    <div  class="home-options">
+        <a href="{%url 'unpurchasable'%}">
 
-    <a href="{%url 'about_me'%}">
-        <div  class="home-options">
-            <div  class="home-text">About me</div>
-        </div>
-    </a>
+            <div id="item-1" class="home-text">Previous work</div>
+
+        </a>
+    </div>
+
+    <div class="home-options">
+        <a href="{%url 'about_me'%}">
+
+            <div id="item-2" class="home-text">About me</div>
+    
+        </a>
+    </div>
 
     {%if user.is_authenticated%}
-        <a href="{%url 'order_work'%}">
-            <div  class="home-options">
+        <div  class="home-options">
+            <a href="{%url 'order_work'%}">
+              
+            <div id="item-3" class="home-text">Order work</div>
                     
-                <div class="home-text">Order work</div>
-                    
-            </div> 
-        </a>
+            </a>
+        </div>
     {%endif%}
 </div>
+
+<script>
+$(document).ready(function(){
+  $("#item-1").hover(function(){
+    $(this).css("font-size", "30px");
+    }, function(){
+    $(this).css("font-size", "20px");
+  });
+    $("#item-2").hover(function(){
+    $(this).css("font-size", "30px");
+    }, function(){
+    $(this).css("font-size", "20px");
+  });
+    $("#item-3").hover(function(){
+    $(this).css("font-size", "30px");
+    }, function(){
+    $(this).css("font-size", "20px");
+  });
+});
+</script>
 {%endblock%}

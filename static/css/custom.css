@@ -81,7 +81,7 @@ body {
     background-color: #ffff;
     color: #000;
     height: 15%;
-    width: 200px;
+    width: 20%;
     display: inline-block;
     border-radius: 25px;
 }
@@ -137,6 +137,14 @@ body {
 
 }
 
+/*Sign inout*/
+
+.sign-in {
+    margin-left: 0%!important;
+    margin-right: 0%!important;
+    width: 25%!important;
+}
+
 /*Hover*/
 
 .home-options:hover {
@@ -145,11 +153,13 @@ body {
 }
 
 
-.home-options:hover .home-text{
+.home-text:hover{
     background-color: #C8C8C8;
-    transition: 0.2s;
+    transition: 0.4s;
     color: #ffff;
-}
+    height: 40px;
+    width: 30%;
+} 
 
 .filter-text:hover {
     color: #ffff;
