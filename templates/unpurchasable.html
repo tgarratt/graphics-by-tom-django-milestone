@@ -44,12 +44,12 @@
                 <div class="img-div" style="background-image: url('{{MEDIA_URL}}{{pieces.piece}}')"></div>
             </div>
             <div>    
-                <div class="col-md-6"><b>Title:</b> {{pieces.title}}</div>
-                <div  class="col-md-6">{% include "partials/pieces_category.html" %}</div>
-                <div  class="col-md-12"><a href="{% url 'unpurchasable_piece' pieces.id %}">View item</a></div>
+                <div class="col-md-12"><b>Title:</b> {{pieces.title}}</div>
+                <div  class="col-md-12">{% include "partials/pieces_category.html" %}</div>
+                <div  class="col-md-4 piece-link"><a href="{% url 'unpurchasable_piece' pieces.id %}">View item</a></div>
                 {% if request.user.is_superuser %}
-                    <div  class="col-md-6"><a href="{% url 'unpurchasable_piece_delete' pieces.id %}">Delete</a></div>
-                    <div  class="col-md-6"><a href="">Edit</a></div>
+                    <div  class="col-md-4 piece-link"><a href="{% url 'unpurchasable_piece_delete' pieces.id %}">Delete</a></div>
+                    <div  class="col-md-4 piece-link"><a href="{% url 'unpurchasable_piece_edit' pieces.id %}">Edit</a></div>
                 {%endif%}
             </div>
         </div>

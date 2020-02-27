@@ -25,6 +25,10 @@ body {
     padding-left: 10px;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .page-messages {
     color: #ffff;
 }
@@ -33,10 +37,6 @@ body {
     text-align: left;
     padding-left: 20px;
 }
-
-/*.inline {
-    display: inline;
-} */
 
 .center-child {
     text-align: center;
@@ -55,7 +55,7 @@ body {
     margin: 10px;
 }
 
-/* Form for loops */
+/* Img */
 
 .img-div {
     height: 300px;
@@ -64,6 +64,16 @@ body {
     display: inline-block;
     background-size: contain;
     background-position: center;
+}
+
+.img-div-lrg {
+    height: 400px;
+    width: 400px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-size: contain;
+    background-position: center;
+    margin: 20px;
 }
 
 /*Homepage*/
@@ -99,6 +109,14 @@ body {
     font-size: 17px;
 }
 
+.piece-text {
+    text-align: left!important;
+}
+
+.piece-link {
+    font-size: 20px;
+}
+
 .sub-header {
     color: #000;
     padding-left: 20px;
@@ -118,6 +136,7 @@ body {
 }
 
 /*Unpurchasable view*/
+
 .one-piece {
     text-align: left;
     margin-left: 10px;
@@ -213,4 +232,5 @@ ul li {
     .mobile-only {
         display: none !important;
     }
+    
 }

@@ -1,11 +1,11 @@
 {% if orders.when == '50' %}
-    When: ASAP
+    <b>When:</b> ASAP
 {% elif orders.when == '40' %}
-    When: 1 Week
+    <b>When:</b> 1 Week
 {% elif orders.when == '30' %}
-    When: 2 Weeks
+    <b>When:</b> 2 Weeks
 {% elif orders.when == '20' %}
-    When: 4 Weeks+
+    <b>When:</b> 4 Weeks+
 {% else %}
-    When: {{orders.when}}
+    <b>When:</b> {{orders.when}}
 {% endif %}

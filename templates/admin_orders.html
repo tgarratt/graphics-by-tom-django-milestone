@@ -1,24 +1,26 @@
 {%extends "base.html"%}
 {%block content%}
     <h1>Admin orders</h1>
-    <div>
+    <div  class="row piece">
         {%for orders in orders%}
-        <br>
-        <div>
-            <div class="img-div" style="background-image: url('{{MEDIA_URL}}{{orders.draft}}')">image</div>
-            <div>Title: {{orders.title}}</div>
-            <div>Order date: {{orders.order_date}}</div>
-            <div>Username: {{orders.user_name}}</div>
-            <div>Email: {{orders.user_email}}</div>
-            <div>{% include "partials/orders_category.html" %}</div>
-            <div>{% include "partials/orders_when.html" %}</div>
-            <div>Price: {{orders.order_total}}</div>
-            <div>Comments: {{orders.comments}}</div>
-            {% if request.user.is_superuser %}
-            <a href="{% url 'admin_orders_delete' orders.id %}">Complete</a>
-            {%endif%}
+        <div class="col-md-4 row piece-content">
+            <div class="col-md-12">
+                <div class="img-div" style="background-image: url('{{MEDIA_URL}}{{orders.draft}}')"></div>
+            </div>
+            <div>
+                <div class="col-md-6 piece-text"><b>Title:</b> {{orders.title}}</div>
+                <div class="col-md-6 piece-text"><b>Username:</b> {{orders.user_name}}</div>               
+                <div class="col-md-6 piece-text">{% include "partials/orders_category.html" %}</div>
+                <div class="col-md-6 piece-text">{% include "partials/orders_when.html" %}</div>
+                <div class="col-md-6 piece-text"><b>Price:</b> {{orders.order_total}}</div>
+                <div class="col-md-12 piece-text"><b>Email:</b> {{orders.user_email}}</div>
+                <div class="col-md-12 piece-text"><b>Comments:</b> {{orders.comments}}</div>
+                <div class="col-md-12 piece-text"><b>Order date:</b> {{orders.order_date}}</div>
+                {% if request.user.is_superuser %}
+                <div class="col-md-6 piece-text piece-link"><a href="{% url 'admin_orders_delete' orders.id %}">Complete</a></div>
+                {%endif%}
+            </div>
         </div>
-        <br>
 
         {%endfor%}
 
