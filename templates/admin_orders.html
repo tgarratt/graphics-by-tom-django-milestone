@@ -8,14 +8,14 @@
                 <div class="img-div" style="background-image: url('{{MEDIA_URL}}{{orders.draft}}')"></div>
             </div>
             <div>
-                <div class="col-md-6 piece-text"><b>Title:</b> {{orders.title}}</div>
-                <div class="col-md-6 piece-text"><b>Username:</b> {{orders.user_name}}</div>               
-                <div class="col-md-6 piece-text">{% include "partials/orders_category.html" %}</div>
-                <div class="col-md-6 piece-text">{% include "partials/orders_when.html" %}</div>
-                <div class="col-md-6 piece-text"><b>Price:</b> {{orders.order_total}}</div>
-                <div class="col-md-12 piece-text"><b>Email:</b> {{orders.user_email}}</div>
-                <div class="col-md-12 piece-text"><b>Comments:</b> {{orders.comments}}</div>
-                <div class="col-md-12 piece-text"><b>Order date:</b> {{orders.order_date}}</div>
+                <div class="col-sm-12 col-md-6 piece-text"><b>Title:</b> {{orders.title}}</div>
+                <div class="col-sm-12 col-md-6 piece-text"><b>Username:</b> {{orders.user_name}}</div>               
+                <div class="col-sm-12 col-md-6 piece-text">{% include "partials/orders_category.html" %}</div>
+                <div class="col-sm-12 col-md-6 piece-text">{% include "partials/orders_when.html" %}</div>
+                <div class="col-sm-12 col-md-6 piece-text"><b>Price:</b> {{orders.order_total}}</div>
+                <div class="col-sm-12 col-md-12 piece-text"><b>Email:</b> {{orders.user_email}}</div>
+                <div class="col-sm-12 col-md-12 piece-text"><b>Comments:</b> {{orders.comments}}</div>
+                <div class="col-sm-12 col-md-12 piece-text"><b>Order date:</b> {{orders.order_date}}</div>
                 {% if request.user.is_superuser %}
                 <div class="col-md-6 piece-text piece-link"><a href="{% url 'admin_orders_delete' orders.id %}">Complete</a></div>
                 {%endif%}
@@ -24,7 +24,7 @@
 
         {%empty%}
 
-        <div>No orders!</div>
+        <div class="no-loop">No orders!</div>
 
         {%endfor%}
 
