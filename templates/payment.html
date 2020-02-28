@@ -21,11 +21,9 @@
     <div class="charge-info">Please fill out the form below to pay.</div>
 </div>
 
-
-
 <form role="form" method="post" id="payment-form" action="{%url 'payment'%}">
 	{% csrf_token %}
-	<legend>Payment form</legend>
+	<legend><b>Payment form</b>-if payment successful you will be redirected home</legend>
 	<div id="credit-card-errors" style="display:none">
 		<div class="alert-message block-message error" id="stripe-error-message"></div>
 	</div>

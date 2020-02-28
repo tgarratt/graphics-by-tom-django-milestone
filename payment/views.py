@@ -30,17 +30,18 @@ def get_payment(request):
                     description=request.user.email,
                     card=form_payment.cleaned_data['stripe_id'],
                 )
+
+                if customer.paid:
+                    messages.success(request, "You have successfully paid!")
+                    user_order.paid_tf = True
+                    user_order.save()
+                    return redirect(reverse("home"))
+
+                else:
+                    messages.error(request, "Unable to take payment!")
+
             except stripe.error.CardError:
                 messages.error(request, "Your card was declined!")
-
-            if customer.paid:
-                messages.success(request, "You have successfully paid!")
-                user_order.paid_tf = True
-                user_order.save()
-                return redirect(reverse("home"))
-
-            else:
-                messages.error(request, "Unable to take payment!")
 
         else:
             print(form_payment.errors)

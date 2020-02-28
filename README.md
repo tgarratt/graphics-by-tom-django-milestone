@@ -62,5 +62,42 @@ if the number of items on the previous work page are very large then multiple ma
 ## Testing 
 
 My first testing stage was debug set to true. This proves to me that the code syntax was correct and the code ran.
-If not the application wouldn't run and I would be able to visually see the errors and as is done by the computer
+If not the application wouldn't run and I would be able to visually see the errors and as is done by the computer.
+This was not only do I know that my code will run, I know it is laid out efficiantly and well.
 
+My edit function specificlly was very greatful for the debug system as I had to import specific IDs of items from the
+database that in a language I was fairly new to. This allowed me to make the page to the best of my ability without
+any remaining errors.
+
+As much as the debug system worked well for me, the UX had to be tested by eye. This meant I would have to take my user
+stories and adapt my site to incorporate them. Here is an example.
+
+- Previous work page:
+    1. View previous work and see it listed in a 1 per row format which I diddnt find TO look nice or be efficiant.
+    2. Add a 2 by row format which although looked cleaner still looked like a waste of space.
+    3. Decided on a 3 row format where I found the pieces display were not too small but not too large.
+    4. I then wanted the content inside to display looking organised and neat, this was done by simply letting the 
+    text sit on the left of their column.
+
+My site is designed to be clean and sharp on all resolutions, boostrap row feature helped me do this with eas as well as
+boostraps form customisation. This prevented the screen from ever looking crowded or scruffy and makes zero impairment whether
+youre looking at a huge screen or a tiny one!
+
+## Deployment 
+
+Gitpod was great for letting me preview my work before it was deployed, this helped me get a real understanding of how my site
+would look when fully deployed to Heroku. Due to the close relationship of the two sites it made getting one to the other remarkably
+straight forward and any errors would display clearly for a quick fix.
+
+##Credit
+
+###Content 
+
+- The template for my nav bar was acquired from bootstrap.
+- The format for my payment form was acquired via Stripe.
+
+### Acknowledgements
+
+My inspiration for my site came from the project recomendations. I saw this idea and could almost instantly invision it, I played around with
+a few diffrent ideas to see which one I prefered but it always came back to the original. I think this is due to my appriciation for art
+and graphics design and my desire to become a freelance worker in the future myself helping fuel me for this project.
