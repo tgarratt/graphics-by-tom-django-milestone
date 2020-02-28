@@ -33,9 +33,11 @@ urlpatterns = [
     url(r'^about_me$', get_about_me, name='about_me'),
     url(r'^order_work$', get_order_work, name='order_work'),
     url(r'^unpurchasable/', include(unpurchasable_urls)),
-    url(r'^admin_orders_delete/(?P<pk>\d+)', get_admin_orders_delete, name='admin_orders_delete'),
+    url(r'^admin_orders_delete/(?P<pk>\d+)', get_admin_orders_delete,
+        name='admin_orders_delete'),
     url(r'^admin_orders$', get_admin_orders, name='admin_orders'),
-    url(r'^unpurchasable_form$', get_unpurchasable_form, name='unpurchasable_form'),
+    url(r'^unpurchasable_form$', get_unpurchasable_form,
+        name='unpurchasable_form'),
     url(r'^payment$', get_payment, name='payment'),
     url(r'^accounts/', include(accounts_urls)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': MEDIA_ROOT})

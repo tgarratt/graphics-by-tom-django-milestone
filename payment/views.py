@@ -12,7 +12,8 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def get_payment(request):
-    # stripe payment form thats gets the amount total from last added item of the database
+    # stripe payment form thats gets the amount total from last added
+    # item of the database
     # only when payed allows the item to be seen in the admin orders
     user_order = order.objects.order_by('order_date').last()
     payment_amount = user_order.order_total
@@ -40,7 +41,7 @@ def get_payment(request):
 
             else:
                 messages.error(request, "Unable to take payment!")
-                
+
         else:
             print(form_payment.errors)
             messages.error(
@@ -50,4 +51,7 @@ def get_payment(request):
         form_payment = payment_form()
 
     return render(
-        request, "../templates/payment.html", {'form_payment': form_payment, 'publishable': settings.STRIPE_PUBLISHABLE, 'payment_amount': payment_amount})
+        request, "../templates/payment.html", {
+            'form_payment': form_payment,
+            'publishable': settings.STRIPE_PUBLISHABLE,
+            'payment_amount': payment_amount})

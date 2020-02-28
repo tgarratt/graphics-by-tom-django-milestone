@@ -53,7 +53,7 @@ def get_unpurchasable_packaging(request):
 
 
 def get_unpurchasable_piece(request, pk):
-    # view a specific piece 
+    # view a specific piece
     piece = get_object_or_404(add_piece, pk=pk)
     context = {
         "piece": piece
@@ -63,7 +63,7 @@ def get_unpurchasable_piece(request, pk):
 
 
 def get_unpurchasable_piece_delete(request, pk=None):
-    # delete a specific piece 
+    # delete a specific piece
     delete_piece = get_object_or_404(add_piece, pk=pk)
     delete_piece.delete()
 
@@ -71,13 +71,14 @@ def get_unpurchasable_piece_delete(request, pk=None):
 
 
 def get_unpurchasable_piece_edit(request, pk):
-    # edit a specific piece 
+    # edit a specific piece
     edit_info = get_object_or_404(add_piece, pk=pk)
     print(edit_info)
 
     if request.method == "POST":
 
-        form_edit = add_piece_form(request.POST, request.FILES, instance=edit_info)
+        form_edit = add_piece_form(
+            request.POST, request.FILES, instance=edit_info)
         if form_edit.is_valid():
             edit_info = form_edit.save(commit=False)
             form_edit.save()
@@ -86,4 +87,5 @@ def get_unpurchasable_piece_edit(request, pk):
     else:
         form_edit = add_piece_form(instance=edit_info)
 
-    return render(request, "../templates/unpurchasable_edit.html", {"form_edit": form_edit})
+    return render(request, "../templates/unpurchasable_edit.html", {
+        "form_edit": form_edit})

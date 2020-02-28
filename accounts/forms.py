@@ -12,8 +12,9 @@ class sign_in_form(forms.Form):
 
 class register_form(UserCreationForm):
 
-    password1 = forms.CharField(label="Password",widget=forms.PasswordInput)
-    password2 = forms.CharField(label="Password comfirmation", widget=forms.PasswordInput)
+    password1 = forms.CharField(label="Password", widget=forms.PasswordInput)
+    password2 = forms.CharField(
+        label="Password comfirmation", widget=forms.PasswordInput)
 
     class Meta:
         model = User
@@ -24,7 +25,8 @@ class register_form(UserCreationForm):
         username = self.cleaned_data.get('username')
 
         if User.objects.filter(email=email).exclude(username=username):
-            raise forms.ValidationError(u'Account already exists with that email!')
+            raise forms.ValidationError(
+                u'Account already exists with that email!')
         return email
 
     def clean_reg_password2(self):
@@ -38,5 +40,3 @@ class register_form(UserCreationForm):
             raise ValidationError("Passwords must match!")
 
         return password2
-
-

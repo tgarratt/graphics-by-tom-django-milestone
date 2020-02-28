@@ -18,18 +18,22 @@ def get_sign_in(request):
     if request.user.is_authenticated:
         return redirect(reverse('home'))
     if request.method == "POST":
-        form_sign_in = sign_in_form(request.POST) 
+        form_sign_in = sign_in_form(request.POST)
         if form_sign_in.is_valid():
-            user = auth.authenticate(username=request.POST['username'], password=request.POST['password'])
+            user = auth.authenticate(
+                username=request.POST['username'],
+                password=request.POST['password'])
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "Login successful!")
                 return redirect(reverse('home'))
             else:
-                form_sign_in.add_error(None, "Your username or password is incorrect!")
+                form_sign_in.add_error(
+                    None, "Your username or password is incorrect!")
     else:
         form_sign_in = sign_in_form()
-    return render(request, "../templates/sign_in.html", {"form_sign_in": form_sign_in})
+    return render(
+        request, "../templates/sign_in.html", {"form_sign_in": form_sign_in})
 
 
 def get_register(request):
@@ -43,7 +47,9 @@ def get_register(request):
         if form_register.is_valid():
             form_register.save()
 
-            user = auth.authenticate(username=request.POST['username'], password=request.POST['password1'])
+            user = auth.authenticate(
+                username=request.POST['username'],
+                password=request.POST['password1'])
 
             if user:
                 auth.login(user=user, request=request)
@@ -55,4 +61,6 @@ def get_register(request):
 
     else:
         form_register = register_form()
-    return render(request, "../templates/register.html", {"form_register": form_register})
+    return render(
+        request, "../templates/register.html",
+        {"form_register": form_register})
