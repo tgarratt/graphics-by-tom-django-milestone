@@ -26,7 +26,7 @@ class order(models.Model):
     order_total = models.IntegerField(default=0)
     order_date = models.DateTimeField(
         blank=True, null=True, default=timezone.now)
-    paid = models.BooleanField(default=False)
+    paid_tf = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

@@ -4,7 +4,7 @@ from order_work.models import order
 
 def get_admin_orders(request):
     # displays all of the paid for orders
-    orders = order.objects.filter(paid=True)
+    orders = order.objects.filter(paid_tf=True)
     return render(
         request, "../templates/admin_orders.html", {"orders": orders})
 

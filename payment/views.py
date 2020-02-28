@@ -20,7 +20,7 @@ def get_payment(request):
 
     if request.method == "POST":
         form_payment = payment_form(request.POST)
-
+        print(payment_amount)
         if form_payment.is_valid():
             price = payment_amount
             try:
@@ -35,7 +35,7 @@ def get_payment(request):
 
             if customer.paid:
                 messages.success(request, "You have successfully paid!")
-                user_order.paid = True
+                user_order.paid_tf = True
                 user_order.save()
                 return redirect(reverse("home"))
 
