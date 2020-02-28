@@ -3,6 +3,7 @@ from .forms import add_piece_form
 
 
 def get_unpurchasable_form(request):
+    # display form allowing admin to add items to the previous work page
     if request.method == "POST":
         form_add = add_piece_form(request.POST, request.FILES)
         if form_add.is_valid():

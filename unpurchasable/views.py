@@ -4,55 +4,56 @@ from unpurchasable_form.forms import add_piece_form
 
 
 def get_unpurchasable(request):
-    # all
+    # filter all
     add_pieces = add_piece.objects.all()
     return render(
         request, "../templates/unpurchasable.html", {"add_pieces": add_pieces})
 
 
 def get_unpurchasable_logo(request):
-    # logo
+    # filter logo
     add_pieces = add_piece.objects.filter(piece_category="25")
     return render(
         request, "../templates/unpurchasable.html", {"add_pieces": add_pieces})
 
 
 def get_unpurchasable_clothing(request):
-    # clothing
+    # filter clothing
     add_pieces = add_piece.objects.filter(piece_category="20")
     return render(
         request, "../templates/unpurchasable.html", {"add_pieces": add_pieces})
 
 
 def get_unpurchasable_web_app(request):
-    # web app
+    # filter web app
     add_pieces = add_piece.objects.filter(piece_category="30")
     return render(
         request, "../templates/unpurchasable.html", {"add_pieces": add_pieces})
 
 
 def get_unpurchasable_advertising(request):
-    # advertising
+    # filter advertising
     add_pieces = add_piece.objects.filter(piece_category="35")
     return render(
         request, "../templates/unpurchasable.html", {"add_pieces": add_pieces})
 
 
 def get_unpurchasable_illustration(request):
-    # illustration
+    # filter illustration
     add_pieces = add_piece.objects.filter(piece_category="40")
     return render(
         request, "../templates/unpurchasable.html", {"add_pieces": add_pieces})
 
 
 def get_unpurchasable_packaging(request):
-    # packaging
+    # filter packaging
     add_pieces = add_piece.objects.filter(piece_category="15")
     return render(
         request, "../templates/unpurchasable.html", {"add_pieces": add_pieces})
 
 
 def get_unpurchasable_piece(request, pk):
+    # view a specific piece 
     piece = get_object_or_404(add_piece, pk=pk)
     context = {
         "piece": piece
@@ -62,6 +63,7 @@ def get_unpurchasable_piece(request, pk):
 
 
 def get_unpurchasable_piece_delete(request, pk=None):
+    # delete a specific piece 
     delete_piece = get_object_or_404(add_piece, pk=pk)
     delete_piece.delete()
 
@@ -69,6 +71,7 @@ def get_unpurchasable_piece_delete(request, pk=None):
 
 
 def get_unpurchasable_piece_edit(request, pk):
+    # edit a specific piece 
     edit_info = get_object_or_404(add_piece, pk=pk)
     print(edit_info)
 

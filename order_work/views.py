@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required()
 def get_order_work(request):
+    # form to order work 
     if request.method == "POST":
         print(request.POST)
         form_order = order_form(request.POST, request.FILES)

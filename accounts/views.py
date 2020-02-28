@@ -7,12 +7,14 @@ from accounts.forms import sign_in_form, register_form
 
 @login_required
 def get_sign_out(request):
+    # signs the user out 
     auth.logout(request)
     messages.success(request, "Logout successful!")
     return redirect(reverse('home'))
 
 
 def get_sign_in(request):
+    # signs the user in
     if request.user.is_authenticated:
         return redirect(reverse('home'))
     if request.method == "POST":
@@ -31,6 +33,7 @@ def get_sign_in(request):
 
 
 def get_register(request):
+    # allows the user to create an account
     if request.user.is_authenticated:
         return redirect(reverse('home'))
 
