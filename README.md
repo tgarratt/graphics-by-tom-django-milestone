@@ -91,7 +91,8 @@ youre looking at a huge screen or a tiny one!
 
 Gitpod was great for letting me preview my work before it was deployed, this helped me get a real understanding of how my site
 would look when fully deployed to Heroku. Due to the close relationship of the two sites it made getting one to the other remarkably
-straight forward and any errors would display clearly for a quick fix.
+straight forward and any errors would display clearly for a quick fix. I also used seperate databases for development (sqlite) and for
+deployment (postgres).
 
 ## Credit
 
