@@ -21,8 +21,10 @@ I believe that Graphics by Tom meets all of these users preferences.
 
 ### display testing
 
-The /wireframes file will show two templates of how I planned the site, little has changed but I changed what was needed.
-.....
+The /wireframes file will show two templates of how I planned the site, little has changed but I changed what was needed based on my opinion
+and factoring in the user stories. You may notice one of the changes being the form is centered on desktop, I felt it being on the left had
+an effect that made it not domnate the page and I felt the page looked incomplete, once I made this change the UX improved a lot. I also made
+the choice of displaying 3 items per row instead of 2 and this is discused further in the document.
 
 ## Features
 
@@ -57,6 +59,8 @@ if the number of items on the previous work page are very large then multiple ma
     - Provides documentation templates for html and css.
 - MySOL + Postgres
     - These were used for databases for my develpment and deployment code.
+- Stripe
+    - Stripe gave me the ability to charge users for an item.
 
 
 ## Testing 
