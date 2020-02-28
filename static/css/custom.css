@@ -194,6 +194,36 @@ body {
     margin-top: 10px;
 }
 
+/*footer*/
+
+footer {
+    height: 25px;
+    width: 100%;
+    background-color: #878787;
+    position: fixed;
+    bottom: 0;
+    margin: 0 auto;
+}
+
+.footer-text {
+    color: white;
+    padding-left: 23px;
+    padding-right: 23px;
+}
+
+ul li {
+    display: inline;
+
+}
+
+/* payment */
+.charge-info {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+
 /*Hover*/
 
 .home-options:hover {
@@ -223,28 +253,6 @@ body {
 .footer-link:hover {
     text-decoration: underline;
     color: #ffff;
-}
-
-/*footer*/
-
-footer {
-    height: 25px;
-    width: 100%;
-    background-color: #878787;
-    position: fixed;
-    bottom: 0;
-    margin: 0 auto;
-}
-
-.footer-text {
-    color: white;
-    padding-left: 23px;
-    padding-right: 23px;
-}
-
-ul li {
-    display: inline;
-
 }
 
 /*---------------------------------- MOBILE Hide */
