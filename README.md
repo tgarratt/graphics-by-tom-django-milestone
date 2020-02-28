@@ -93,9 +93,9 @@ Gitpod was great for letting me preview my work before it was deployed, this hel
 would look when fully deployed to Heroku. Due to the close relationship of the two sites it made getting one to the other remarkably
 straight forward and any errors would display clearly for a quick fix.
 
-##Credit
+## Credit
 
-###Content 
+### Content 
 
 - The template for my nav bar was acquired from bootstrap.
 - The format for my payment form was acquired via Stripe.
