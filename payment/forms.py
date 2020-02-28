@@ -1,6 +1,7 @@
 from django import forms
 
 
+#  Required fields for stripe
 class payment_form(forms.Form):
 
     MONTH_CHOICES = [(i, i) for i in range(1, 13)]

@@ -1,13 +1,12 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from accounts.forms import sign_in_form, register_form
 
 
 @login_required
 def get_sign_out(request):
-    # signs the user out 
+    # signs the user out
     auth.logout(request)
     messages.success(request, "Logout successful!")
     return redirect(reverse('home'))
