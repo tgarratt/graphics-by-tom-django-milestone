@@ -53,8 +53,3 @@ def get_register(request):
     else:
         form_register = register_form()
     return render(request, "../templates/register.html", {"form_register": form_register})
-
-
-def get_profile(request):
-    user = User.objects.get(email=request.user.email)
-    return render(request, "../templates/profile.html", {"account": user})

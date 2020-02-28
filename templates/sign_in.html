@@ -5,13 +5,13 @@
 {%block content%}
     <h1>Sign in</h1>
 
-    <form class="sign-in" method="POST">
+    <form class="account-form account-form-mob" method="POST">
         {% csrf_token %}
 
         {{form_sign_in | as_bootstrap}}
 
-        <button type="submit">Sign in</button>
+        <button type="submit" class="btn btn-primary">Sign in</button>
     </form>
-    <div><a href="{%url 'password_reset'%}">Forget your password?</div>   
-    <div><a href="{%url 'register'%}">Create an account!</div>
+    <div><a class="account-links" href="{%url 'password_reset'%}">Forget your password?</div>   
+    <div><a class="account-links" href="{%url 'register'%}">Create an account!</div>
 {%endblock%}

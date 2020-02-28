@@ -1,12 +1,15 @@
 {%extends "base.html"%}
+
+{%load bootstrap_tags%}
+
 {%block content%}
     <h1>Registration</h1>
 
-    <form method="POST">
+    <form class="account-form account-form-mob" method="POST">
         {% csrf_token %}
         
-        {{ form_register.as_p }}
+        {{ form_register | as_bootstrap}}
 
-        <button type="submit">Register</button>
+        <button type="submit" class="btn btn-primary">Register</button>
     </form>
 {%endblock%}

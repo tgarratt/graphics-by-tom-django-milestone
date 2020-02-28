@@ -33,7 +33,6 @@
                         <li><a href="{%url 'admin_orders'%}">Admin orders</a></li>
                     {%endif%}
                     {%if user.is_authenticated%}
-                        <li><a href="{%url 'profile'%}">Profile</a></li>
                         <li><a href="{%url 'sign_out'%}">Sign out</a></li>
                     {%else%}
                         <li><a href="{%url 'sign_in'%}">Sign in/register</a></li>
@@ -51,7 +50,9 @@
                         <li><a href="{%url 'admin_orders'%}"  class="mob-nav-link">Admin orders</a></li>
                     {%endif%}
                     {%if user.is_authenticated%}
-                        <li><a href="{%url 'profile'%}"  class="mob-nav-link">Profile</a></li>
+                        <div  class="inline"><a href="{%url 'sign_out'%}" class="mob-nav-link">Sign out</a></div>
+                    {%else%}
+                        <div  class="inline"><a href="{%url 'sign_in'%}" class="mob-nav-link">Sign in/register</a></div>
                     {%endif%}
                 </ul>
             </div>
@@ -60,11 +61,6 @@
             <button class="navbar-toggler inline glyphicon glyphicon-menu-hamburger mob-burger" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            {%if user.is_authenticated%}
-                <div  class="inline"><a href="{%url 'sign_out'%}" class="mob-nav-link">Sign out</a></div>
-            {%else%}
-                <div  class="inline"><a href="{%url 'sign_in'%}" class="mob-nav-link">Sign in/register</a></div>
-            {%endif%}
         </nav>
     </div>
     

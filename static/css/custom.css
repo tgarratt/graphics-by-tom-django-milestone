@@ -64,6 +64,7 @@ body {
     display: inline-block;
     background-size: contain;
     background-position: center;
+    margin: 5px
 }
 
 .img-div-lrg {
@@ -135,8 +136,6 @@ body {
     font-size: 17px;
 }
 
-/*Unpurchasable view*/
-
 .one-piece {
     text-align: left;
     margin-left: 10px;
@@ -156,12 +155,43 @@ body {
 
 }
 
-/*Sign inout*/
+/* about */
 
-.sign-in {
+.about-text {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+.about-content {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #DCDCDC;
+    border-radius: 15px;
+}
+
+.social-links-abt {
+    padding: 5px;
+    color: #000;
+}
+
+/*Accounts*/
+
+.account-form {
     margin-left: 0%!important;
     margin-right: 0%!important;
     width: 25%!important;
+}
+
+.account-links {
+    color: #000;
+    border-top: 5px;
+}
+
+.reset-btn {
+    margin-top: 10px;
 }
 
 /*Hover*/
@@ -223,6 +253,11 @@ ul li {
     .mobile-hide {
         display: none !important;
     }
+    .account-form {
+    margin-left: 0%!important;
+    margin-right: 0%!important;
+    width: 50%!important;
+}
 }
 
 
@@ -232,5 +267,10 @@ ul li {
     .mobile-only {
         display: none !important;
     }
+    .account-form-mob {
+    margin-left: 0%!important;
+    margin-right: 0%!important;
+    width: 25%!important;
+}
     
 }
